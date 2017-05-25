@@ -1,12 +1,22 @@
 header{
 	width: 100%;
 	text-align: center;
-	font-size: 40px;
+	font-size: 60px;
+	font-family: 'Italianno', cursive;
+	margin-bottom: 80px;
 }
+
+
 
 body{
 	background-image: url(../images/parchment.jpg);
+
 }
+p{
+	font-family: 'Bilbo', cursive;
+}
+
+
 
 #game{
 	border: 3px solid #000;
@@ -15,6 +25,7 @@ body{
 	margin: 0 auto;
 	height: 500px;
 	right: 20px;
+
 }
 
 #button{
@@ -42,6 +53,7 @@ body{
 	float: left;
 	position: relative;
 	bottom: 500px;
+	font-size: 50px
 
 
 

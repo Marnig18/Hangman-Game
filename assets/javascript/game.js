@@ -1,6 +1,6 @@
 // create array for words to guess
 
-var words = ["dog", "cat", "long", "short"];
+var words = ["quill", "owl", "hogwarts", "gryfindor", "hufflepuff", "slytherin", "ravenclaw", "wand", "headmaster"];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i,", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var blank = "";
 var lettersGuessed = [];
@@ -75,18 +75,26 @@ function start(){
 			Guesses(userGuess);
 			// lettersGuessed.push(userGuess);
 			// console.log(lettersGuessed);
-			// var afterGuessesLeft = guessesLeft - 1			
-	}
+			var afterGuessesLeft = guessesLeft - 1			
+			}
+	
 		else {
 			var gameDiv = document.getElementById("word");
-			var letterIndex = wordArray.indexOf(userGuess);
-			console.log('letter index:' + letterIndex);
-			blankVar[letterIndex] = userGuess; 
-			var updateBlankVar = "<p>" + blankVar + "</p>"
-			gameDiv.innerHTML = updateBlankVar;
-			console.log(updateBlankVar);
-		
+			var letterIndex = wordArray.includes(userGuess);
+				// console.log('letter index:' + letterIndex);
+				if(letterIndex === true){
+					var newBlank = wordArray.replace(/blank/gi, userGuess);
+					var updateBlankVar = "<p>" + newBlank + "</p>"
+					gameDiv.innerHTML = updateBlankVar;
+					console.log(updateBlankVar);
 
+					
+					}
+				
+				// blankVar[letterIndex] = userGuess; 
+				
+				
+	
 				console.log("guessesLeft" + guessesLeft);
 				if(guessesLeft === 0){
 					alert("You Loose");
@@ -96,13 +104,26 @@ function start(){
 						(wordArray.indexOf() != -1) {
 						alert("You Win!")
 					}
+
+
+		
 			
 			console.log(blankVar);
 
 			console.log(guessesLeft)
 
 			}
-		}	
+
+				// function replace(array){
+					
+					
+				// }
+
+			
+			}
+
+
+
 
 	
 	
