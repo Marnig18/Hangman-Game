@@ -10,93 +10,144 @@ var guessesLeft = 10
 var blankVar = []
 
 
-
-
-function start(){
-	var wordChosen = words[Math.floor(Math.random() * words.length)];
+var wordChosen = words[Math.floor(Math.random() * words.length)];
 	console.log(wordChosen);
+
 	var wordLength = wordChosen.length;
 	//split word into array
 	var wordArray = wordChosen.split("")
 	console.log(wordArray);
+
+function chooseWord(wordChosen){
+	
+	
 	
 	for (var i = 0; i < wordLength; i++){
 		blank = "_ " + blank
 
-	var updateBlank = "<p>" + blank + "</p>"
 
-	var gameDiv = document.getElementById("game");
-
-	gameDiv.innerHTML = updateBlank;
-
-	
 	}
 
-	blankVar.push(blank)
-	console.log(blankVar)
+}
 
- 	document.onkeyup = function(event) {
+	
+	
+
+
+
+	
+	
+	// console.log(updateBlank.length)
+	// console.log("split no space: " + updateBlank.split(""))
+	// console.log("split with space: " + updateBlank.split(" "))
+	// debugger;
+
  
+
+
+	// blankVar.push(updateBlank.split(""))
+	console.log('blankVar: ' + blankVar)
+	
+function start(){
+
+	chooseWord(wordChosen)
+		var updateBlank = blank 
+		var gameDiv = document.getElementById("word");
+		gameDiv.innerHTML = updateBlank;
+
+		blankVar = updateBlank.split(" ")
+		blankVar.length
+
+		console.log(wordArray.indexOf())
+
+		
+		}
+	
+
+
+	
+ 
+ document.onkeyup = function(event) {
 	var userGuess = event.key; 
-
-	
-
-	
 	
 		if(wordArray.indexOf(userGuess) === -1){
 			console.log("works")
-			lettersGuessed.push(userGuess);
-			console.log(lettersGuessed);
-			var afterGuessesLeft = guessesLeft - 1
-
-			var updateGuessedField = "<p>" + userGuess + "</p>"
-			var lettersDiv = document.getElementById("lettersGuessed");
-			lettersDiv.innerHTML = "Letters Guessed: " + updateGuessedField
-			
-			var updateGuessesLeft = "<p>" + afterGuessesLeft + "</p>"
-			var guessedDiv = document.getElementById("guessesLeft");
-			guessedDiv.innerHTML = "Guesses Left: " + updateGuessesLeft;
-
+			Guesses(userGuess);
+			// lettersGuessed.push(userGuess);
+			// console.log(lettersGuessed);
+			// var afterGuessesLeft = guessesLeft - 1			
 	}
 		else {
+			var gameDiv = document.getElementById("word");
 			var letterIndex = wordArray.indexOf(userGuess);
-			console.log(letterIndex)
-			
-			blankVar[letterIndex] = userGuess 
+			console.log('letter index:' + letterIndex);
+			blankVar[letterIndex] = userGuess; 
+			var updateBlankVar = "<p>" + blankVar + "</p>"
+			gameDiv.innerHTML = updateBlankVar;
+			console.log(updateBlankVar);
+		
 
+				console.log("guessesLeft" + guessesLeft);
+				if(guessesLeft === 0){
+					alert("You Loose");
+					}
+				
+					else if 
+						(wordArray.indexOf() != -1) {
+						alert("You Win!")
+					}
 			
 			console.log(blankVar);
-			
-			gameDiv.innerHTML =  blankVar
 
-		
+			console.log(guessesLeft)
+
+			}
+		}	
 
 	
-
-				// console.log(letterIndex)
-				// letterReplace(letterIndex);
-			// }
-		
-
-
-			// letterReplace(wordArray)
+	
+	
 
 
 
-			// console.log("works")
-			// lettersIn.push(userGuess);
-			// console.log(lettersIn);
 
-		}
-		
-		}
+				
+ 
+
+	function Guesses (array) {	
+		lettersGuessed.push(array);
+		console.log(array);
+		var afterGuessesLeft = guessesLeft-- 
+
+			console.log("guessesLeft" + guessesLeft);
+				if(guessesLeft === 0){
+					alert("You Loose");
+					reset();
+				}
+
+				
+		var updateGuessedField = "<p>" + lettersGuessed + "</p>"
+		var lettersDiv = document.getElementById("lettersGuessed");
+		lettersDiv.innerHTML = "Letters Guessed: " + updateGuessedField
+				
+		var updateGuessesLeft = "<p>" + guessesLeft + "</p>"
+		var guessedDiv = document.getElementById("guessesLeft");
+		guessedDiv.innerHTML = "Guesses Left: " + updateGuessesLeft;
+
+
+	}
+
+
+
+function reset(){
+	guessesLeft = 10
+
 }
-	
-
-			
-
-			
 		
+				
+			
+
+	
 		
 			// for(letterIndex in wordArray){
 				
@@ -105,10 +156,8 @@ function start(){
 		
 		
 
-		
-
-				
 			
+	
 
 
 
