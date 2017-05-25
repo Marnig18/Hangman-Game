@@ -7,24 +7,32 @@
 	<script src="assets/javascript/game.js"></script>
 </head>
 <body>
+	<header>
+	<h1>Hangman!</h1>
+	</header>
+	
 	<div id="game">
-	
+		
+		<button id="button" onclick= "start()">Start</button>
 
-	<button id="button" onclick= "start()">Start</button>
+		<br>
+		
+		<p id="word"></p>
 
-	<br>
-	
-	<p id="word"></p>
+		<br>
+		
+		
 
-	<br>
-	<p id="lettersGuessed">Letters Guessed</p>
-	
-
-  <br>
-<!-- 
+	  <br>
+	<!-- 
 	<p id="guesses"> Guesses</p> -->
 
 
+	</div>
+
+<div>
+<p id="lettersGuessed">Letters Guessed</p>
+<p id = guessesLeft>Guesses</p>
 </div>
 </body>
 </html>
